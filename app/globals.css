@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@config "../tailwind.config.js";
+
+/* @theme {
+  --color-blackk: #2A222D;
+  --color-primary: "#6B62AC";
+  --color-secondary: "#D0DE55";
+  --color-whitee: "#E4EAEE";
+} */
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+
+/* add the main font */
+@font-face {
+  font-family: 'PIGARNOS_NEUE';
+  font-weight: normal;
+  font-style: normal;
+  src: url(/fonts/PIGARNOS_NEUE_Regular/PIGARNOS_NEUE_Regular.ttf);
+}
+
+/* add the slogan font */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+}
+
+body {
+  background: #2A222D;
+}
+
+/* for consult type request */
+.ant-select-item-option-content {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}
+
+/* home page carousel buttons  */
+.slick-active button {
+  background-color: black !important;
+}
+
+.slick-dots li button {
+  background-color: gray !important;
+}
+
+.scoped-corner {
+  -webkit-mask-image: radial-gradient(circle at top right, transparent 40px, white 41px);
+  mask-image: radial-gradient(circle at top right, transparent 40px, white 41px);
+}
+
+/* @layer utilities {
+  .clip-left-half {
+    clip-path: inset(0 0 0 50%);
+  }
+
+  .clip-right-half {
+    clip-path: inset(0 50% 0 0);
+  }
+} */
+
+.inverted-radius {
+  --r: 20px;
+  /* the radius */
+  --s: 30px;
+  /* size of inner curve */
+  --x: 10vw;
+  /* horizontal offset (no percentange) */
+  --y: 20px;
+  /* vertical offset (no percentange) */
+
+  width: 100%;
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at calc(100% - var(--r)) var(--r), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+    100% calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+}
+
+.inverted-radius-call-us {
+  --r: 30px;
+  /* the radius */
+  --s: 20px;
+  /* size of inner curve */
+  --x: 0.1vw;
+  /* horizontal offset (no percentange) */
+  --y: 35vh;
+  /* vertical offset (no percentange) */
+
+  width: 100%;
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at calc(100% - var(--r)) var(--r), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+    100% calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+}
+
+/* Hide scrollbar */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
+}
+
+/* .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+} */
+/* HTML: <div class="inverted-radius"></div> */
+.inverted-radius-brands {
+  --r: 20px;
+  /* the radius */
+  --s: 30px;
+  /* size of inner curve */
+  --x: 50px;
+  /* horizontal offset */
+  --y: 40px;
+  /* vertical offset */
+
+  background: #3FB8AF;
+  border-radius: var(--r);
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(from 90deg at calc(100% - var(--r)) calc(100% - var(--r)), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(100% - var(--_d) - var(--x)) 100% var(--_m),
+    100% calc(100% - var(--_d) - var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 100%, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r) - var(--x)) calc(-1*var(--r) - var(--y)),
+    var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+    var(--_g) 0 calc(-1*var(--_d) - var(--y));
+  mask-repeat: no-repeat;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+  .inverted-radius-brands {
+    --x: 40px;
+    --y: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inverted-radius-brands {
+    --x: 30px;
+    --y: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inverted-radius-brands {
+    --x: 25px;
+    --y: 20px;
+  }
+}
+
+
+
+/* style for drag and drop components  */
+/* In your CSS */
+.sortable-item {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .sortable-item.id-1 {
+    width: 40%;
+  }
+
+  .sortable-item.id-2 {
+    width: 25%;
+  }
+
+  .sortable-item.id-3 {
+    width: 35%;
+  }
+}
+
+.dragging {
+  width: 100% !important;
+}
+
+
+
+/* HTML: <div class="inverted-radius"></div> */
+.inverted-radius-blogs {
+  --r: 24px;
+  /* the radius */
+  --s: 30px;
+  /* size of inner curve */
+  --x: 100px;
+  /* horizontal offset (no percentage) */
+  --y: 5px;
+  /* vertical offset (no percentage) */
+  
+  background: #ffff;
+  border-radius: var(--r);
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(from 180deg at var(--r) calc(100% - var(--r)), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(var(--_d) + var(--x)) 100% var(--_m),
+    0 calc(100% - var(--_d) - var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 100%, #0000 99%, #000 calc(100% + 1px)) calc(var(--r) + var(--x)) calc(-1*var(--r) - var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(-1*var(--_d) - var(--y));
+  mask-repeat: no-repeat;
+}
+
+
+
+
+/* HTML: <div class="inner-curve"></div> */
+.inner-curve-blogs {
+  --r: 25px;
+  /* control the rounded part */
+  --s: 150px;
+  /* control the size of the cut */
+  --a: 45deg;
+  /* control the depth of the curvature */
+  --p: 50%;
+  /* control the position */
+ 
+   
+  background: #ffffff;
+  border-radius: var(--r);
+  --_m: var(--r), #000 calc(100% - 1px), #0000;
+  --_d: (var(--s) + var(--r))*cos(var(--a));
+  mask:
+    radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+    radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+    radial-gradient(var(--s) at var(--p) calc(-1*sin(var(--a))*var(--s)),
+      #0000 100%, #000 calc(100% + 1px)) 0 calc(var(--r)*(1 - sin(var(--a)))) no-repeat,
+    linear-gradient(90deg, #000 calc(var(--p) - var(--_d)), #0000 0 calc(var(--p) + var(--_d)), #000 0);
+}
+
+ 
